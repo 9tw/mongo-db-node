@@ -99,7 +99,6 @@ client.connect((error, client) => {
     //         },
     //     }
     // );
-
     // updatePromise
     //     .then((result) => {
     //         console.log(result);
@@ -107,4 +106,16 @@ client.connect((error, client) => {
     //     .catch((error) => {
     //         console.log(error);
     //     });
+
+    // Mengubah banyak data
+    db.collection('mahasiswa').updateMany(
+        {
+            name: 'Bella',
+        },
+        {
+            $set: {
+                name: 'Natasha Bellande',
+            },
+        }
+    );
 });

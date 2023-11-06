@@ -108,14 +108,28 @@ client.connect((error, client) => {
     //     });
 
     // Mengubah banyak data
-    db.collection('mahasiswa').updateMany(
-        {
-            name: 'Bella',
-        },
-        {
-            $set: {
-                name: 'Natasha Bellande',
-            },
-        }
-    );
+    // db.collection('mahasiswa').updateMany(
+    //     {
+    //         name: 'Bella',
+    //     },
+    //     {
+    //         $set: {
+    //             name: 'Natasha Bellande',
+    //         },
+    //     }
+    // );
+
+    // Hapus data
+    db
+        .collection('mahasiswa')
+        .deleteOne({
+            name: 'Gerdo Wijaya',
+        })
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
 });

@@ -19,11 +19,35 @@ client.connect((error, client) => {
     const db = client.db(dbName);
 
     // Menambahkan 1 data
-    db.collection('mahasiswa').insertOne(
-        {
-            name: 'Shadow',
-            email: 'shadowdidow@gmail.com'
-        },
+    // db.collection('mahasiswa').insertOne(
+    //     {
+    //         name: 'Shadow',
+    //         email: 'shadowdidow@gmail.com'
+    //     },
+    //     (error, result) => {
+    //         if (error) {
+    //             return console.log('gagal menambahkan data!');
+    //         }
+    //         console.log(result);
+    //     }
+    // );
+
+    // Menambahkan banyak data
+    db.collection('mahasiswa').insertMany(
+        [
+            {
+                name: 'Tiger',
+                email: 'tiger-melony@gmail.com'
+            },
+            {
+                name: 'Bella',
+                email: 'bella-melony@gmail.com'
+            },
+            {
+                name: 'Alpha',
+                email: 'alpha-melony@gmail.com'
+            }
+        ],
         (error, result) => {
             if (error) {
                 return console.log('gagal menambahkan data!');

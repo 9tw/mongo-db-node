@@ -13,5 +13,22 @@ client.connect((error, client) => {
     if (error) {
         return console.log('Koneksi gagal!');
     }
-    console.log('Koneksi berhasil!');
+    // console.log('Koneksi berhasil!');
+
+    // pilih database
+    const db = client.db(dbName);
+
+    // Menambahkan 1 data
+    db.collection('mahasiswa').insertOne(
+        {
+            name: 'Shadow',
+            email: 'shadowdidow@gmail.com'
+        },
+        (error, result) => {
+            if (error) {
+                return console.log('gagal menambahkan data!');
+            }
+            console.log(result);
+        }
+    );
 });

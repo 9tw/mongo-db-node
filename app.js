@@ -57,10 +57,20 @@ client.connect((error, client) => {
     // );
 
     // Menampilkan semua data
+    // console.log(
+    //     db
+    //         .collection('mahasiswa')
+    //         .find()
+    //         .toArray((error, result) => {
+    //             console.log(result);
+    //         })
+    // );
+
+    // Menampilkan data spesifik
     console.log(
         db
             .collection('mahasiswa')
-            .find()
+            .find({ name: 'Gerry' })
             .toArray((error, result) => {
                 console.log(result);
             })

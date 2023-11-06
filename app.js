@@ -33,26 +33,36 @@ client.connect((error, client) => {
     // );
 
     // Menambahkan banyak data
-    db.collection('mahasiswa').insertMany(
-        [
-            {
-                name: 'Tiger',
-                email: 'tiger-melony@gmail.com'
-            },
-            {
-                name: 'Bella',
-                email: 'bella-melony@gmail.com'
-            },
-            {
-                name: 'Alpha',
-                email: 'alpha-melony@gmail.com'
-            }
-        ],
-        (error, result) => {
-            if (error) {
-                return console.log('gagal menambahkan data!');
-            }
-            console.log(result);
-        }
+    // db.collection('mahasiswa').insertMany(
+    //     [
+    //         {
+    //             name: 'Tiger',
+    //             email: 'tiger-melony@gmail.com'
+    //         },
+    //         {
+    //             name: 'Bella',
+    //             email: 'bella-melony@gmail.com'
+    //         },
+    //         {
+    //             name: 'Alpha',
+    //             email: 'alpha-melony@gmail.com'
+    //         }
+    //     ],
+    //     (error, result) => {
+    //         if (error) {
+    //             return console.log('gagal menambahkan data!');
+    //         }
+    //         console.log(result);
+    //     }
+    // );
+
+    // Menampilkan semua data
+    console.log(
+        db
+            .collection('mahasiswa')
+            .find()
+            .toArray((error, result) => {
+                console.log(result);
+            })
     );
 });

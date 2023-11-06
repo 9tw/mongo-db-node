@@ -77,14 +77,34 @@ client.connect((error, client) => {
     // );
 
     // Mengubah data
-    db.collection('mahasiswa').updateOne(
-        {
-            name: 'Gerry',
-        },
-        {
-            $set: {
-                name: 'Gerdo Wijaya',
-            },
-        }
-    );
+    // db.collection('mahasiswa').updateOne(
+    //     {
+    //         name: 'Gerry',
+    //     },
+    //     {
+    //         $set: {
+    //             name: 'Gerdo Wijaya',
+    //         },
+    //     }
+    // );
+
+    // Mengubah data dengan promise
+    // const updatePromise = db.collection('mahasiswa').updateOne(
+    //     {
+    //         name: 'Gerdo Wijaya',
+    //     },
+    //     {
+    //         $set: {
+    //             email: 'gerdowijaya@gmail.com',
+    //         },
+    //     }
+    // );
+
+    // updatePromise
+    //     .then((result) => {
+    //         console.log(result);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
 });

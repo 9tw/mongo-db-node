@@ -120,10 +120,24 @@ client.connect((error, client) => {
     // );
 
     // Hapus data
+    // db
+    //     .collection('mahasiswa')
+    //     .deleteOne({
+    //         name: 'Gerdo Wijaya',
+    //     })
+    //     .then((result) => {
+    //         console.log(result);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
+
+
+    // Hapus banyak data
     db
         .collection('mahasiswa')
-        .deleteOne({
-            name: 'Gerdo Wijaya',
+        .deleteMany({
+            name: 'Tegar',
         })
         .then((result) => {
             console.log(result);
@@ -131,5 +145,4 @@ client.connect((error, client) => {
         .catch((error) => {
             console.log(error);
         });
-
 });

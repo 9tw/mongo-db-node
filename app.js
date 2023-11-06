@@ -67,12 +67,24 @@ client.connect((error, client) => {
     // );
 
     // Menampilkan data spesifik
-    console.log(
-        db
-            .collection('mahasiswa')
-            .find({ name: 'Gerry' })
-            .toArray((error, result) => {
-                console.log(result);
-            })
+    // console.log(
+    //     db
+    //         .collection('mahasiswa')
+    //         .find({ name: 'Gerry' })
+    //         .toArray((error, result) => {
+    //             console.log(result);
+    //         })
+    // );
+
+    // Mengubah data
+    db.collection('mahasiswa').updateOne(
+        {
+            name: 'Gerry',
+        },
+        {
+            $set: {
+                name: 'Gerdo Wijaya',
+            },
+        }
     );
 });
